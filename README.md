@@ -1,4 +1,3 @@
-```markdown
 # Livro Caixa - Frontend
 
 Este projeto é uma aplicação frontend desenvolvida com o objetivo de gerenciar um livro caixa. Ele foi criado utilizando o [Create React App](https://github.com/facebook/create-react-app) e segue boas práticas de desenvolvimento com React.
@@ -15,7 +14,7 @@ Este projeto é uma aplicação frontend desenvolvida com o objetivo de gerencia
 
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [Node.js](https://nodejs.org/) (versão 22 ou superior)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
 ## Instalação

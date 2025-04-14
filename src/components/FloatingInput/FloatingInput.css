@@ -1,0 +1,45 @@
+.floating-input-group {
+    position: relative;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.floating-input {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* label flutuante padrão */
+.floating-label {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    color: #888;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background-color: white;
+    padding: 0 4px;
+}
+
+/* Flutuar label quando o input está em foco ou preenchido */
+.floating-input:focus+.floating-label,
+.floating-input:not(:placeholder-shown)+.floating-label,
+.floating-input[type="date"]:valid+.floating-label,
+.floating-input[type="password"]:not(:placeholder-shown)+.floating-label {
+    top: -10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+/* Alinha à direita somente campos numéricos */
+.floating-input[type="number"] {
+    text-align: right;
+  }
+  

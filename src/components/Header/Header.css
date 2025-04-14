@@ -1,0 +1,41 @@
+.header {
+    position: fixed;    /* torna fixo no topo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;  /* ocupa toda a largura */
+    height: 60px;
+    background-color: #007bff;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;   /* garante que fique acima de outros elementos */
+}
+
+/* Fixa o logo no canto esquerdo */
+.logo-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo-fixed svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Centraliza o texto no meio da tela */
+.header-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
