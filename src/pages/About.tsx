@@ -1,9 +1,48 @@
 // pages/About.tsx
+import Menu from '../components/Menu/Menu';
+import { Table } from '../components/Table/Table';
 import './Page.css'
 
 export function About() {
   return (
     <section>
+      <Menu/>
+
+      <Table
+        columns={[
+          { header: 'Foto', accessor: 'imagem', type: 'image' },
+          { header: 'Produto', accessor: 'nome', type: 'text' },
+          { header: 'Preço', accessor: 'preco', type: 'number' },
+          { header: 'Data', accessor: 'data', type: 'date' },
+        ]}
+        data={[
+          {
+            imagem: "https://impactosociedade.com.br/images/nupis_transparent.png",
+            nome: 'Mouse sem fio Logitech MX Master 3S com ergonomia',
+            preco: 489.9,
+            data: '2025-04-14',
+          },
+          {
+            imagem: "https://impactosociedade.com.br/images/nupis_transparent.png",
+            nome: 'Mouse sem fio Logitech MX Master 3S com ergonomia',
+            preco: 489.9,
+            data: '2025-04-14',
+          },
+          {
+            imagem: "https://impactosociedade.com.br/images/nupis_transparent.png",
+            nome: 'Mouse sem fio Logitech MX Master 3S com ergonomia',
+            preco: 489.9,
+            data: '2025-04-14',
+          },
+        ]}
+        actions={{
+          visualizar: (item) => console.log('Visualizar:', item),
+          editar: (item) => console.log('Editar:', item),
+          excluir: (item) => console.log('Excluir:', item),
+        }}
+        width="40%"
+      />
+
       <h2 className="page-title">Sobre o Livro Caixa</h2>
 
       <p>

@@ -1,13 +1,15 @@
-// pages/Login.tsx
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import { FloatingInput } from '../../components/FloatingInput/FloatingInput';
-import { fakeLogin } from '../../services/authService';
 import './Login.css';
 
 export function Login() {
   const [form, setForm] = useState({ email: '', senha: '' });
   const [erro, setErro] = useState('');
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth(); // ← usa o contexto de autenticação
+  const navigate = useNavigate(); // ← redireciona após login
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -19,8 +21,8 @@ export function Login() {
     setErro('');
     setLoading(true);
     try {
-      await fakeLogin(form.email, form.senha);
-      alert('Login bem-sucedido!');
+      await login(form.email, form.senha);  // ← usa o login do contexto
+      navigate('/');                        // ← redireciona para home
     } catch (err) {
       setErro('Email ou senha inválidos.');
     } finally {

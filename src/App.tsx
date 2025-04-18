@@ -7,20 +7,24 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Login } from './pages/Login/Login';
 import './App.css';
+import SideMenu from './components/SideMenu/SideMenu';
 
 export default function App() {
   return (
     <Router>
-      <Header />
-      <Nav />
-      <main className="main main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className="grid-container">
+        <Header />
+        <Nav />
+        <SideMenu />
+        <main className="main page">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

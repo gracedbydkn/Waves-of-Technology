@@ -1,23 +1,59 @@
-/* Nav */
+/* src/components/Nav/Nav.css */
+
 .nav {
-    position: fixed;
-    top: 60px;     /* imediatamente abaixo do header */
-    left: 0;
-    width: 100%;
-    background-color: #eaeaea;
-    padding: 8px 16px;
+    grid-area: nav;
     display: flex;
-    gap: 16px;
-    z-index: 999;     /* abaixo do header, acima do conteúdo */
-    border-bottom: 1px solid #ccc;
-}
+    align-items: center;
+    gap: var(--gutter);
+    padding: calc(var(--gutter)/2) var(--gutter);
+    background: var(--color-secondary);
+    color: var(--gray-light);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 999;
+  }
+  
+  /* agrupa os links à esquerda */
+  .nav-links {
+    display: flex;
+    gap: var(--gutter);
+  }
 
-.nav a {
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;           /* espaço entre ícone e texto */
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-}
+    color: inherit;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .nav-link-icon {
+    color: currentColor;   /* herda a cor do link */
+  }
+  
+  .nav-link-label {
+    font-weight: 500;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .nav a:hover {
+    background: rgba(255,255,255,0.1);
+  }
+  
+  /* mostra o path à direita */
+  .nav-path {
+    margin-left: auto;            /* empurra pro canto direito */
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gray-light);
+  }
+  
