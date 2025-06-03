@@ -121,8 +121,12 @@ body{
 
 .register-link a{
     text-decoration: none;
-    color: #fff;
+    color: #0a205c;
     font-weight: 600;
+}
+.register-link p{
+    text-decoration: none;
+    color: #0a205c;
 }
 
 .register-link a:hover{
@@ -138,4 +142,24 @@ body{
 .logo {
     width: 600px;
     margin-left: 700px; /* Ajuste conforme necessário */
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

@@ -108,7 +108,7 @@ body{
 .login:hover{
     background-color: transparent;
     border: 2px solid rgba(0, 0, 0, .2);
-    color: #fff;
+    color: #0a205c;
     transition: 0.5s;
 }
 
@@ -121,10 +121,14 @@ body{
 
 .register-link a{
     text-decoration: none;
-    color: #fff;
+    color: #0a205c;
     font-weight: 600;
 }
 
+.register-link p{
+    text-decoration: none;
+    color: #0a205c;
+}
 .register-link a:hover{
     text-decoration: underline;
 }

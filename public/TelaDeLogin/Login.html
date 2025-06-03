@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="Login.css">
+    <title>the Waves Technology Login</title>
+</head>
+
+<body>
+    <div class="Logo">
+        <img src="img/Logo.png" alt="Logo" class="logo">
+    </div>
+
+    <main class="container">
+        <!-- O atributo action define para onde o formulário vai quando o botão é pressionado -->
+        <form action="/public/Home/home.html" method="get">
+
+            <h1>Login tech</h1>
+
+            <div class="input-box">
+                <input placeholder="Usuário" type="email" required>
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input placeholder="Senha" type="password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">
+                    Lembrar senha
+                </label>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="login">Login</button>
+
+            <div class="register-link">
+                <p>Não tem uma conta? registre-se 
+                    <a href="/public/TelaDeCadastro/index.html">Cadastre-se</a>
+                </p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
