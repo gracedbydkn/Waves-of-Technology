@@ -1,62 +1,80 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
-import { FloatingInput } from '../../components/FloatingInput/FloatingInput';
 import './Login.css';
 
-export function Login() {
-  const [form, setForm] = useState({ email: '', senha: '' });
-  const [erro, setErro] = useState('');
-  const [loading, setLoading] = useState(false);
-  const { login } = useAuth(); // ← usa o contexto de autenticação
-  const navigate = useNavigate(); // ← redireciona após login
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const navigate = useNavigate();
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
-  }
-
-  async function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setErro('');
-    setLoading(true);
-    try {
-      await login(form.email, form.senha);  // ← usa o login do contexto
-      navigate('/');                        // ← redireciona para home
-    } catch (err) {
-      setErro('Email ou senha inválidos.');
-    } finally {
-      setLoading(false);
+
+    // Simulação de login bem-sucedido
+    if (email && senha) {
+      navigate('/home'); // Mude conforme sua rota
+    } else {
+      alert('Preencha todos os campos.');
     }
-  }
+  };
 
   return (
-    <div className="login-container">
-      <form className="login-box" onSubmit={handleSubmit}>
-        <h2 className="login-title">Acesso ao Sistema</h2>
+    <div>
+     
+      <div className="Logo">
+        <img src="/img/Logo.png" alt="Logo" className="logo" />
+      </div>
 
-        <FloatingInput
-          label="Email"
-          type="text"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-        />
+      <main className="container">
+        <form onSubmit={handleSubmit}>
+          <h1>Login tech</h1>
 
-        <FloatingInput
-          label="Senha"
-          type="password"
-          name="senha"
-          value={form.senha}
-          onChange={handleChange}
-        />
+          <div className="input-box">
+            <input
+              placeholder="Usuário"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <i className="bx bxs-user"></i>
+          </div>
 
-        <button type="submit" className="login-button" disabled={loading}>
-          {loading ? 'Entrando...' : 'Entrar'}
-        </button>
+          <div className="input-box">
+            <input
+              placeholder="Senha"
+              type="password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+            <i className="bx bxs-lock-alt"></i>
+          </div>
 
-        {erro && <p className="login-error">{erro}</p>}
-      </form>
+          <div className="remember-forgot">
+            <label>
+              <input type="checkbox" />
+              Lembrar senha
+            </label>
+            <a href="#">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit" className="login">
+            Login
+          </button>
+
+          <div className="register-link">
+            <p>
+              Não tem uma conta? registre-se{' '}
+              <a onClick={() => navigate('/cadastro')} style={{ cursor: 'pointer' }}>
+                Cadastre-se
+              </a>
+            </p>
+          </div>
+        </form>
+      </main>
     </div>
   );
-}
+};
+
+export default Login;
